@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<% @imagenes.each do |imagen| %>
+			<div class="row">
+				<div class="col-md-7">
+					<img class="img-responsive" src="<%= imagen.url %>"><br><br>
+				</div>
+				<div class="col-md-5">
+					<p><strong>Titulo: </strong><%= imagen.descripcion %></p>
+					<p><strong>Descripcion: </strong><%= imagen.descripcion %></p>
+				</div>
+			</div>
+		<% end.empty? and begin %>
+			<p>No hay imagenes disponibles</p>
+		<% end %>	
+		<p><a href="/subirarchivo" class="btn btn-success">subir imagen</a></p>
+	</div>
+</div>
+	
